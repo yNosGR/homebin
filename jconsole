@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CLASSPATH=$JAVA_HOME/lib/jconsole.jar
+CLASSPATH=$CLASSPATH:$JAVA_HOME/lib/tools.jar
+for JAR in $(find $HOME/bin/jmxjars -name "*.jar") ; do
+    CLASSPATH=$CLASSPATH:$JAR
+done
+
+echo $CLASSPATH
+
+$JAVA_HOME/bin/jconsole -J-Djava.class.path="$CLASSPATH"

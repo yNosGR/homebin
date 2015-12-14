@@ -1,0 +1,18 @@
+
+
+uploadfile=/tmp/uploadfile
+uploadfileSize=1024 #size in MB
+
+tmpfiledir=/tmp
+
+hostname=$1
+
+
+if [ ! -f $uploadfile ] ; then
+  echo "making a ${uploadfileSize} MB file."
+  dd if=/dev/zero of=$uploadfile bs=1M count=$uploadfileSize
+fi
+
+scp $uploadfile ${hostname}:/dev/null > ${tmpfiledir}/${hostname}
+
+

@@ -1,0 +1,2 @@
+sudo -u peon /lean/tms/jreport/scripts/sync_from_existing.sh -s natms-jrpt1-grr -u `whoami` 
+

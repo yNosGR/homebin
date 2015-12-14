@@ -1,0 +1,1 @@
+/home/cbailey/bin/nsupdate.sh add `ifconfig em1 | grep "inet"| awk '{print $2}' | cut -d ":" -f 2|grep .` craig.leanlogistics.com

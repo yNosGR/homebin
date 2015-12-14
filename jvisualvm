@@ -1,0 +1,3 @@
+#!/bin/bash
+JAVA_HOME=/usr/java/default
+$JAVA_HOME/bin/jvisualvm --cp:a "$HOME/bin/jmxjars/*"

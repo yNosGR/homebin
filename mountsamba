@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# This script will recurse down /mnt and use any dir it finds there as a hostname and mounts the subdirs from there assuming they are shrares.
+
+
+for hostdir in `ls -d /mnt/vm*` ; do
+        host=`basename ${hostdir}`
+        for i in `ls -d /mnt/${host}/*` ; do 
+                sharename=`basename $i`
+                sudo mount -t cifs -o credentials=/home/cbailey/.ssh/.netpass //${host}/${sharename} /mnt/${host}/${sharename}
+        done
+done
+
+
+
+exit
+
